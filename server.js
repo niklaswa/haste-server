@@ -110,6 +110,7 @@ if (config.rateLimits) {
   app.use(connect_rate_limit(config.rateLimits));
 }
 
+app.use(require('cookies').connect());
 //Checking if user is logged in (checking PHP session)
 app.use(require('./lib/logincheck').init(config));
 
